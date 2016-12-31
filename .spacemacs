@@ -31,19 +31,28 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     javascript
-     python
-     markdown
-     html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+	 (javascript :variables 
+			      javascript-disable-tern-port-files nil
+	              tern-command '("node" "c:/Users/Thoth/AppData/Roaming/npm/node_modules/tern/bin/tern")
+				  ;;tern-mode t
+				  ;;tern-auto-complete t
+				  ;;tern-ac-setup t
+				  )
+     python
+     markdown
+     html
      helm
-     ;; auto-completion
+	 ;;auto-completion
+     (auto-completion :variables
+                       auto-completion-enable-help-tooltip t)
+	 ;;				     auto-completion-enable-snippets-in-popup t)
      ;; better-defaults
-     emacs-lisp
+     ;; emacs-lisp
      ;; git
      ;; markdown
      org
@@ -51,18 +60,38 @@ values."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(simple-httpd impatient-mode rainbow-mode)
+   dotspacemacs-additional-packages '(
+										simple-httpd 
+										impatient-mode 
+										rainbow-mode
+										flymd
+										)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+										;; JavaScript Layer 
+										;  coffee-mode
+										;  company
+										;  flycheck
+										;  js2-mode
+										;  js2-refactor
+										;  json-mode
+										;  json-snatcher
+										;  tern
+										;  web-beautify
+										;  skewer-mode
+										;  livid-mode
+   
+   
+										)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -114,7 +143,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner `nil
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -122,7 +151,7 @@ values."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
    dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+                                (projects . 2))
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -131,16 +160,17 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+                         spacemacs-light
+						 leuven)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 12
+   dotspacemacs-default-font '("Fantasque Sans Mono"
+                               :size 14
                                :weight normal
                                :width normal
-                               :powerline-scale 1.4)
+                               :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -182,7 +212,7 @@ values."
    dotspacemacs-display-default-layout nil
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts t
    ;; Size (in MB) above which spacemacs will prompt to open the large file
    ;; literally to avoid performance issues. Opening a file literally means that
    ;; no major mode or minor modes are active. (default is 1)
@@ -304,8 +334,26 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  (setq tern-command '("node" "C:/Users/Thoth/AppData/Roaming/npm/node_modules/tern/bin/tern"))
-  
+;; Enable live render of markdown in browser provided by strapdownjs.com
+;; used with httpd and impatient-mode
+;; tell impatient mode to use it with M-x imp-set-user-filter RET markdown-html RET
+;; Themes from http://bootswatch.com/ are included
+;; Available themes: Amelia | Cerulean | Cyborg | Journal | Readable | Simplex
+;; 					 Slate | Spacelab | Spruce | Superhero | United
+	(defun markdown-html (buffer)
+		(princ (with-current-buffer buffer
+			(format "<!DOCTYPE html><html><title>Impatient Markdown</title><xmp theme=\"slate\" style=\"display:none;\"> %s  </xmp><script src=\"http://strapdownjs.com/v/0.2/strapdown.js\"></script></html>" (buffer-substring-no-properties (point-min) (point-max))))
+        (current-buffer)))
+		
+;; Powerline separator options:
+;; < alternate | arrow | arrow-fade | bar | box | brace | butt | chamfer | contour 
+;;   curve | rounded | roundstub | slant | wave | zigzag | nil > 
+
+	(setq powerline-default-separator 'alternate)
+	;;(setq spaceline-workspace-numbers-unicode t)
+	;;(setq spaceline-window-numbers-unicode t)
+	;;(spaceline-compile)
+	
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -316,16 +364,19 @@ you should place your code here."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(blink-cursor-mode nil)
- '(column-number-mode t)
+ '(column-number-mode nil)
  '(display-time-mode t)
  '(fringe-mode 0 nil (fringe))
+ '(idle-update-delay 0.2)
  '(package-selected-packages
    (quote
-    (web-beautify livid-mode json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js-doc coffee-mode skewer-mode js2-mode tern rainbow-mode omnisharp yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode anaconda-mode pythonic ac-html mmm-mode markdown-toc markdown-mode gh-md org-projectile pcache org-present org org-pomodoro alert log4e gntp org-download gnuplot org-plus-contrib impatient-mode htmlize simple-httpd web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
+    (flymd fontawesome zonokai-theme zenburn-theme zen-and-art-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme pastels-on-dark-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme niflheim-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme firebelly-theme farmhouse-theme espresso-theme dracula-theme django-theme darktooth-theme darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme company-quickhelp flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip flycheck auto-dictionary helm-company helm-c-yasnippet company-web web-completion-data company-tern dash-functional company-statistics company-anaconda company auto-yasnippet ac-ispell tern-auto-complete auto-complete tern web-beautify livid-mode json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js-doc coffee-mode skewer-mode js2-mode rainbow-mode omnisharp yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode anaconda-mode pythonic ac-html mmm-mode markdown-toc markdown-mode gh-md org-projectile pcache org-present org org-pomodoro alert log4e gntp org-download gnuplot org-plus-contrib impatient-mode htmlize simple-httpd web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build spacemacs-theme)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "outline" :slant normal :weight normal :height 98 :width normal)))))
+ '(mode-line ((t (:background "#222226" :foreground "#b2b2b2" :box (:line-width 2 :color "#5d4d7a" :style released-button)))))
+ '(mode-line-buffer-id ((t (:inherit bold :foreground "#bc6ec5" :weight bold :height 0.92 :family "Segoe UI"))))
+ '(mode-line-inactive ((t (:background "#292b2e" :foreground "#b2b2b2" :box (:line-width 2 :color "#5d4d7a" :style released-button))))))
