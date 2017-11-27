@@ -2,7 +2,7 @@
 (defun dotspacemacs/init ()
  (setq-default
   dotspacemacs-elpa-https t
-  dotspacemacs-elpa-timeout 5
+  dotspacemacs-elpa-timeout 2
   dotspacemacs-check-for-update t
   dotspacemacs-elpa-subdirectory nil
   dotspacemacs-editing-style 'vim
@@ -13,6 +13,9 @@
   dotspacemacs-scratch-mode 'text-mode
   dotspacemacs-themes 
    '(
+    spacemacs-dark
+    solarized-light
+    spacemacs-light
     neptune
     swords
     zenburn
@@ -23,8 +26,8 @@
     "Iosevka"
      :weight medium
      :width medium
-     :size 16
-     :powerline-scale 1.0
+     :size 17
+     :powerline-scale 1
     )
   dotspacemacs-leader-key "SPC"
   dotspacemacs-emacs-command-key "SPC"
