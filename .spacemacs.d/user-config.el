@@ -38,7 +38,7 @@
        ("<=" . (#x00A0 (Br . Bl) #xe141))))
      (setq prettify-symbols-unprettify-at-point t)
      (prettify-symbols-mode)))
-	 
+
 	(add-hook 'js2-mode-hook (lambda () (tern-mode t)))
 	(add-hook 'js2-mode-hook 'highlight-operators-js)
 	(add-hook 'text-mode-hook 'visual-line-mode)
