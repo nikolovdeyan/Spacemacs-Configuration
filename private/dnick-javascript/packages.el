@@ -9,9 +9,7 @@
 (defun dnick-javascript/setup-javascript ()
 
 )
-	
-  
-	
+
 (defun dnick-javascript/init-javascript ()
     (use-package javascript
       :defer t

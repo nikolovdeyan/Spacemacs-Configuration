@@ -9,12 +9,8 @@
         csv
         helm
         dash
-        (shell 
-            :variables
-			    shell-default-term-shell "C:\Program Files\Git\git-bash.exe"
-                shell-default-height 30
-                shell-default-position 'bottom)
-        (auto-completion 
+        shell
+        (auto-completion
             :variables
                 auto-completion-enable-help-tooltip t
                 auto-completion-enable-snippets-in-popup t
@@ -32,19 +28,19 @@
         emacs-lisp
         html
         python
-		django
+        django
         ;; ipython-notebook
         javascript
         sql
 ;;      ----- text processing -----
         markdown
         org
-		yaml
-		bibtex
+        yaml
+        bibtex
         latex
 ;;      ----- visuals -----
         ;; themes-megapack
-		
+
 ;;      ----- custom layers -----
         dnick-python
         dnick-org

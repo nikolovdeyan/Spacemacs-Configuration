@@ -11,7 +11,7 @@
   dotspacemacs-startup-lists nil
   dotspacemacs-startup-buffer-responsive t
   dotspacemacs-scratch-mode 'text-mode
-  dotspacemacs-themes 
+  dotspacemacs-themes
    '(
     spacemacs-dark
     solarized-light
@@ -21,13 +21,13 @@
     zenburn
     )
   dotspacemacs-colorize-cursor-according-to-state t
-  dotspacemacs-default-font 
+  dotspacemacs-default-font
    '(
     "Iosevka"
      :weight medium
      :width medium
      :size 17
-     :powerline-scale 1
+     :powerline-scale 0.8
     )
   dotspacemacs-leader-key "SPC"
   dotspacemacs-emacs-command-key "SPC"
@@ -40,7 +40,7 @@
   dotspacemacs-retain-visual-state-on-shift t
   dotspacemacs-visual-line-move-text nil
   dotspacemacs-ex-substitute-global nil
-  dotspacemacs-default-layout-name "Default"
+  dotspacemacs-default-layout-name "Def"
   dotspacemacs-display-default-layout nil
   dotspacemacs-auto-resume-layouts nil
   dotspacemacs-large-file-size 1

@@ -19,4 +19,5 @@
    nil '(("[=<>]" . font-lock-operator-face))
    t))
  (setq inhibit-compacting-font-caches t)
+
 )
