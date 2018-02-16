@@ -80,18 +80,18 @@
  )
 
  (use-package all-the-icons)
- (use-package spaceline-all-the-icons
-   :after spaceline
-   :init
-     (setq spaceline-all-the-icons-slim-render t
-     spaceline-all-the-icons-primary-separator ""
-     spaceline-all-the-icons-secondary-separator ""
-     spaceline-all-the-icons-separator-type 'arrow
-     spaceline-all-the-icons-flycheck-alternate nil
-     spaceline-all-the-icons-hide-long-buffer-path t
-     spaceline-all-the-icons-highlight-file-name nil
-     spaceline-all-the-icons-icon-set-git-ahead (quote commit))
-   :config
-     (spaceline-toggle-all-the-icons-buffer-size-off)
-     (spaceline-all-the-icons-theme))
+;; (use-package spaceline-all-the-icons
+;;   :after spaceline
+;;   :init
+;;     (setq spaceline-all-the-icons-slim-render t
+;;     spaceline-all-the-icons-primary-separator ""
+;;     spaceline-all-the-icons-secondary-separator ""
+;;     spaceline-all-the-icons-separator-type 'arrow
+;;     spaceline-all-the-icons-flycheck-alternate nil
+;;     spaceline-all-the-icons-hide-long-buffer-path t
+;;     spaceline-all-the-icons-highlight-file-name nil
+;;     spaceline-all-the-icons-icon-set-git-ahead (quote commit))
+;;   :config
+;;     (spaceline-toggle-all-the-icons-buffer-size-off)
+;;     (spaceline-all-the-icons-theme))
 )

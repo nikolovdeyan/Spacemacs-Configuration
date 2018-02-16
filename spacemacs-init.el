@@ -13,6 +13,7 @@
   dotspacemacs-scratch-mode 'text-mode
   dotspacemacs-themes
    '(
+    nagual
     spacemacs-dark
     solarized-light
     spacemacs-light
@@ -26,7 +27,7 @@
     "Iosevka"
      :weight medium
      :width medium
-     :size 17
+     :size 18
      :powerline-scale 0.8
     )
   dotspacemacs-leader-key "SPC"
