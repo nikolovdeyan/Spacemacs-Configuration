@@ -3,7 +3,4 @@
 ;;; License: GPLv3
 ;;; Code:
 
-(defun org-current-is-todo ()
-  (string= "TODO" (org-get-todo-state))
-)
 ;;; funcs.el ends here
