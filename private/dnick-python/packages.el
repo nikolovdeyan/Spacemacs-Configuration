@@ -3,7 +3,7 @@
 ;;; License: GPLv3
 ;;; Code:
 (defconst dnick-python-packages
-  '(python pyvenv smartparens) "The list of Lisp packages required by the dnick-smartparens layer.")
+  '(python) "The list of Lisp packages required by the dnick-smartparens layer.")
 
 (defun dnick-python/post-init-python ()
   (use-package python

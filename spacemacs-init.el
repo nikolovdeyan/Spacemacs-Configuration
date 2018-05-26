@@ -13,6 +13,7 @@
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes
    '(
+     molokai
      solarized-dark
      spacemacs-dark
      solarized-light

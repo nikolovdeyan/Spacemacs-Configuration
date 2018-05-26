@@ -4,7 +4,7 @@
 ;;; Code:
 
 (defconst dnick-javascript-packages '(
-	js2-mode))
+	))
 
 (defun dnick-javascript/setup-javascript ()
 

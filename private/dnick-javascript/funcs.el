@@ -4,3 +4,7 @@
 ;;; Code:
 
 ;;; funcs.el ends here
+(defun highlight-operators-js()
+  (font-lock-add-keywords
+   nil '(("[=<>]" . font-lock-operator-face))
+   t))

@@ -6,9 +6,8 @@
    dotspacemacs-ask-for-lazy-installation t
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/private")
    dotspacemacs-configuration-layers '(
-                                       csv
                                        helm
-                                       dash
+                                       dash    ;; zeal
                                        shell
                                        (auto-completion
                                         :variables
@@ -26,24 +25,19 @@
                                        git
                                        ;;      ----- languages -----
                                        emacs-lisp
-                                       html
+                                       html    ;; web-mode
                                        python
-                                       django
-                                       ;; ipython-notebook
+                                       dnick-python
                                        javascript
+                                       dnick-javascript
                                        sql
                                        ;;      ----- text processing -----
                                        markdown
-                                       org
+                                       dnick-org
                                        yaml
-                                       bibtex
-                                       latex
+                                       csv
                                        ;;      ----- visuals -----
                                        ;; themes-megapack
-                                       ;;      ----- custom layers -----
-                                       dnick-python
-                                       dnick-org
-                                       dnick-javascript
                                        )
 
    dotspacemacs-additional-packages '(
@@ -51,12 +45,11 @@
                                       rainbow-mode
                                       impatient-mode
                                       flymd
-                                      ;;  all-the-icons
-                                      ;;  all-the-icons-dired
                                       yasnippet-snippets
                                       vimish-fold
                                       evil-vimish-fold
                                       solarized-theme
+                                      molokai-theme
                                       )
 
    dotspacemacs-frozen-packages '()
