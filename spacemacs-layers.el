@@ -53,6 +53,7 @@
                                       flymd
                                       ;;  all-the-icons
                                       ;;  all-the-icons-dired
+                                      yasnippet-snippets
                                       vimish-fold
                                       evil-vimish-fold
                                       solarized-theme

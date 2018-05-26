@@ -25,7 +25,7 @@
                         (67 :foreground "blue"))
    org-ellipsis " ▼"
    org-hide-emphasis-markers t   ;; hides the markup elements symbols
-   org-pretty-entities t
+   org-pretty-entities nil
    org-indent-mode t             ;; new lines indented to outline level
    org-startup-indented t
    org-html-inline-images t      ;; export images instead of links to them
