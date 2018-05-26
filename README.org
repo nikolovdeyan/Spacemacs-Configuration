@@ -14,7 +14,7 @@
 
 ** File Structure & Settings
 *** File Structure
-#+BEGIN_PRE
+#+BEGIN_SRC
 ├── init.el
 ├── private
 │   ├── dnick-javascript
@@ -31,7 +31,7 @@
 │   └── zenburn-theme.el
 ├── user-config.el
 └── user-init.el
-#+END_PRE
+#+END_SRC
 
 ** TODO Features Used
 
