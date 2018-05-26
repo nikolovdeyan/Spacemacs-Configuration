@@ -1,7 +1,9 @@
 * My Spacemacs Configuration
 ** TODO Overview
 *** TODO Introduction
-*** TODO Current Configuration Screenshot
+*** Current Configuration Screenshot
+[[./screenshots/spacemacs.png]]
+
 *** TODO Quick Reference
 ** Requirements & Installation
 *** Requirements
