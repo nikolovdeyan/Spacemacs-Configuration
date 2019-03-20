@@ -10,8 +10,8 @@
     :defer t
     :config
      (add-hook 'python-mode-hook (lambda ()
-                               (setq flycheck-checker 'python-pylint
-                                     flycheck-checker-error-threshold 900
+                               (setq flycheck-checker 'python-flake8
+                                     flycheck-checker-error-threshold 500
                                      flycheck-pylintrc "~/.pylintrc"
 									 )))
 	))

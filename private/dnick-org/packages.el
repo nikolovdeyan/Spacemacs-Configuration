@@ -25,7 +25,8 @@
                         (67 :foreground "blue"))
    org-ellipsis " ▼"
    org-hide-emphasis-markers t   ;; hides the markup elements symbols
-   org-pretty-entities nil
+   org-pretty-entities t         ;; use named entities like \alpha
+   org-use-sub-superscripts nil
    org-indent-mode t             ;; new lines indented to outline level
    org-startup-indented t
    org-html-inline-images t      ;; export images instead of links to them
@@ -55,6 +56,44 @@
                             "* %i%? \n %U"))
 
 ;;--------------------------------------------------------------------------------------------
+;;      ### BABEL ###
+;;--------------------------------------------------------------------------------------------
+		;; org-ditaa-jar-path "~/ditaa/ditaa0_9.jar"
+        org-confirm-babel-evaluate t
+        org-src-window-setup 'current-window
+		    org-plantuml-jar-path
+         (expand-file-name "~/scripts/plantuml.jar")
+        ;;org-babel-default-header-args '((:session . "none")
+        ;;                                (:results . "replace")
+        ;;                                (:exports . "code")
+        ;;                                (:cache . "no")
+        ;;                                (:noweb . "no")
+        ;;                                (:hlines . "no")
+        ;;                                (:tangle . "no"))
+
+        org-babel-default-header-args:python '((:results . "output verbatim raw replace")
+                                               (:exports . "both")
+                                               (:wrap . "EXAMPLE"))
+
+        org-babel-default-header-args:sh '((:results . "output verbatim raw replace")
+                                           (:exports . "both")
+                                           (:wrap . "EXAMPLE"))
+;;--------------------------------------------------------------------------------------------
+;;      ### EXPORT ###
+;;--------------------------------------------------------------------------------------------
+        org-export-babel-evaluate nil
+        org-export-with-sub-superscripts t
+        org-html-htmlize-output-type 'css
+        org-export-with-LaTeX-fragments t
+        org-export-with-tags nil
+        org-latex-listings t
+        org-html-xml-declaration
+        '(("html" . "")
+          ("was-html" . "<?xml version=\"1.0\" encoding=\"%s\"?>")
+          ("php" . "<?php echo \"<?xml version=\\\"1.0\\\" encoding=\\\"%s\\\" ?>\"; ?>"))
+
+
+;;--------------------------------------------------------------------------------------------
 ;;      ### REFILE ###
 ;;--------------------------------------------------------------------------------------------
    org-refile-targets '(
@@ -69,6 +108,16 @@
                       "~/Dropbox/ORG/active.org"
                       "~/Dropbox/ORG/tickler.org")
    )
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (dot . t)
+     (python . t)
+     (org . t)
+     (plantuml . t)
+     (latex . t)
+     (sql . t)))
+  (add-to-list 'org-src-lang-modes '("plantuml" . fundamental))
 )
 
 (defun dnick-org/init-org ()
@@ -94,5 +143,5 @@
         (dnick-org/setup-org)
         )
     )
-  )
+ )
 ;;; packages.el ends here

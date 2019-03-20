@@ -32,10 +32,13 @@
                                        dnick-javascript
                                        sql
                                        ;;      ----- text processing -----
+                                       latex
                                        markdown
                                        dnick-org
                                        yaml
                                        csv
+                                       plantuml
+                                       ipython-notebook
                                        ;;      ----- visuals -----
                                        ;; themes-megapack
                                        )

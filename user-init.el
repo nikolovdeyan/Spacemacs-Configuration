@@ -19,4 +19,4 @@
                                  :weight normal)))
     "Font Lock mode face used to highlight operators."
     :group 'font-lock-extras)
-  )
+)

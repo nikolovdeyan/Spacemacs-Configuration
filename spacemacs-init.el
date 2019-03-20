@@ -13,9 +13,9 @@
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes
    '(
-     molokai
-     solarized-dark
      spacemacs-dark
+     solarized-dark
+     molokai
      solarized-light
      spacemacs-light
      zenburn
@@ -26,7 +26,7 @@
      "Iosevka"
      :weight medium
      :width medium
-     :size 18
+     :size 15
      :powerline-scale 1.1
      )
    dotspacemacs-leader-key "SPC"

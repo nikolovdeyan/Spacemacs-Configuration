@@ -5,6 +5,8 @@
   ;;
   ;;  'o' is the leader key reserved for user-defined keys
   (spacemacs/set-leader-keys "oi" 'helm-semantic-or-imenu)
+  (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
+  (spacemacs/set-leader-keys "oe" 'org-entities-help)
   (global-set-key (kbd "C-+") 'text-scale-increase)
   (global-set-key (kbd "C--") 'text-scale-decrease)
   (global-set-key (kbd "C-0") 'text-scale-adjust)
@@ -14,8 +16,6 @@
   ;;
 	(setq dash-helm-dash-docset-path "/home/deo/.local/share/Zeal/Zeal/docsets")
 	(setq helm-dash-common-docsets '("Bash" "HTML" "JavaScript" "Python_3"))
-	(setq helm-dash-browser-func 'aww)
-	(setq browse-url-browser-function 'eww-browse-url)
 	(add-hook 'python-mode-hook (lambda ()
     (setq-local helm-dash-docsets '("Python_3" "Django" "Bash"))))
   (add-hook 'js2-mode-hook (lambda ()
@@ -24,5 +24,8 @@
      (setq-local helm-dash-docsets '("HTML" "CSS" "Emmet"))))
 	(add-hook 'css-mode-hook (lambda ()
      (setq-local helm-dash-docsets '("HTML" "CSS" "Emmet"))))
- )
-
+  ;;
+  ;; enable visual-line-mode in text buffers
+  ;;
+  (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+)
