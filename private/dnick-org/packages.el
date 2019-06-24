@@ -63,21 +63,7 @@
         org-src-window-setup 'current-window
 		    org-plantuml-jar-path
          (expand-file-name "~/scripts/plantuml.jar")
-        ;;org-babel-default-header-args '((:session . "none")
-        ;;                                (:results . "replace")
-        ;;                                (:exports . "code")
-        ;;                                (:cache . "no")
-        ;;                                (:noweb . "no")
-        ;;                                (:hlines . "no")
-        ;;                                (:tangle . "no"))
 
-        org-babel-default-header-args:python '((:results . "output verbatim raw replace")
-                                               (:exports . "both")
-                                               (:wrap . "EXAMPLE"))
-
-        org-babel-default-header-args:sh '((:results . "output verbatim raw replace")
-                                           (:exports . "both")
-                                           (:wrap . "EXAMPLE"))
 ;;--------------------------------------------------------------------------------------------
 ;;      ### EXPORT ###
 ;;--------------------------------------------------------------------------------------------

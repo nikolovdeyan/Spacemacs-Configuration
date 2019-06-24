@@ -28,4 +28,14 @@
   ;; enable visual-line-mode in text buffers
   ;;
   (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+
+  (add-hook 'python-mode-hook (lambda ()
+                                (setq
+                                 python-backend 'anaconda
+                                 python-fill-column 99
+                                 python-enable-yapf-format-on-save t
+                                 flycheck-checker 'python-pylint
+                                 flycheck-pylintrc ".pylintrc"
+                                 flycheck-checker-error-threshold 500
+									               )))
 )

@@ -11,8 +11,8 @@
                                        shell
                                        (auto-completion
                                         :variables
+                                        auto-completion-enable-snippets-in-popup nil
                                         auto-completion-enable-help-tooltip t
-                                        auto-completion-enable-snippets-in-popup t
                                         auto-completion-return-key-behavior nil
                                         auto-completion-tab-key-behavior 'complete
                                         auto-completion-enable-sort-by-usage t)
@@ -27,9 +27,7 @@
                                        emacs-lisp
                                        html    ;; web-mode
                                        python
-                                       dnick-python
                                        javascript
-                                       dnick-javascript
                                        sql
                                        ;;      ----- text processing -----
                                        latex

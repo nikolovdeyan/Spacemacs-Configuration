@@ -26,7 +26,7 @@
      "Iosevka"
      :weight medium
      :width medium
-     :size 15
+     :size 14
      :powerline-scale 1.1
      )
    dotspacemacs-leader-key "SPC"
@@ -57,8 +57,8 @@
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup nil
-   dotspacemacs-active-transparency 90
-   dotspacemacs-inactive-transparency 90
+   dotspacemacs-active-transparency 92
+   dotspacemacs-inactive-transparency 80
    dotspacemacs-show-transient-state-title t
    dotspacemacs-show-transient-state-color-guide t
    dotspacemacs-mode-line-unicode-symbols t
