@@ -24,11 +24,24 @@
                                         enable-flyspell-auto-completion nil)
                                        git
                                        ;;      ----- languages -----
+                                       (python
+                                        :variables
+                                        python-pipenv-activate t
+                                        python-backend 'lsp
+                                        python-lsp-server 'pyls
+                                        python-formatter 'black
+                                        python-format-on-save t
+                                        python-sort-imports-on-save t
+                                        python-fill-column 99
+                                        ;; python-poetry-activate t
+                                        )
+                                       lsp
                                        emacs-lisp
+                                       rust
                                        html    ;; web-mode
-                                       python
                                        javascript
                                        sql
+                                       ansible
                                        ;;      ----- text processing -----
                                        latex
                                        markdown
@@ -50,6 +63,7 @@
                                       vimish-fold
                                       evil-vimish-fold
                                       solarized-theme
+                                      xresources-theme
                                       molokai-theme
                                       )
 

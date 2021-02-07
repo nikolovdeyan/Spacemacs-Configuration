@@ -13,6 +13,7 @@
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes
    '(
+     xresources
      spacemacs-dark
      solarized-dark
      molokai
@@ -57,7 +58,7 @@
    dotspacemacs-fullscreen-at-startup nil
    dotspacemacs-fullscreen-use-non-native nil
    dotspacemacs-maximized-at-startup nil
-   dotspacemacs-active-transparency 92
+   dotspacemacs-active-transparency 80
    dotspacemacs-inactive-transparency 80
    dotspacemacs-show-transient-state-title t
    dotspacemacs-show-transient-state-color-guide t

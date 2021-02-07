@@ -62,7 +62,7 @@
         org-confirm-babel-evaluate t
         org-src-window-setup 'current-window
 		    org-plantuml-jar-path
-         (expand-file-name "~/scripts/plantuml.jar")
+         (expand-file-name "~/plantuml/plantuml.jar")
 
 ;;--------------------------------------------------------------------------------------------
 ;;      ### EXPORT ###
@@ -116,6 +116,8 @@
     (spacemacs/declare-prefix "ooe" "export dispatcher" "org-export-dispatch")
     (spacemacs/declare-prefix "oor" "refile" "org-refile")
     (spacemacs/declare-prefix "oot" "ToC" "Table of Contents")
+    (spacemacs/declare-prefix "oob" "babel execute" "org-babel-execute-src-block")
+    (spacemacs/declare-prefix "ooi" "toggle inline images" "org-toggle-inline-images")
     (progn
 	    (spacemacs/set-leader-keys "ooa" 'org-agenda)
       (spacemacs/set-leader-keys "ooc" 'org-capture)
@@ -123,6 +125,8 @@
       (spacemacs/set-leader-keys "oor" 'org-refile)
       (spacemacs/set-leader-keys "ooC" 'calendar)
       (spacemacs/set-leader-keys "oot" 'org-toc-show)
+      (spacemacs/set-leader-keys "oob" 'org-babel-execute-src-block)
+      (spacemacs/set-leader-keys "ooi" 'org-toggle-inline-images)
       )
     :config
     (progn
