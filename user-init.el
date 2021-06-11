@@ -1,7 +1,5 @@
 ;; -*- mode: emacs-lisp -*-
 (defun dotspacemacs/user-init ()
-  (add-to-list 'custom-theme-load-path "~/.spacemacs.d/themes/")
-  ;;
   ;;  encoding configuration
   ;;
   (set-charset-priority 'unicode)

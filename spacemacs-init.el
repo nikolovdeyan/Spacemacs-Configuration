@@ -13,13 +13,11 @@
    dotspacemacs-scratch-mode 'text-mode
    dotspacemacs-themes
    '(
-     xresources
      spacemacs-dark
      solarized-dark
-     molokai
      solarized-light
      spacemacs-light
-     zenburn
+     xresources
      )
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font
@@ -62,6 +60,7 @@
    dotspacemacs-inactive-transparency 80
    dotspacemacs-show-transient-state-title t
    dotspacemacs-show-transient-state-color-guide t
+   dotspacemacs-mode-line-theme 'spacemacs
    dotspacemacs-mode-line-unicode-symbols t
    dotspacemacs-smooth-scrolling t
    dotspacemacs-line-numbers t

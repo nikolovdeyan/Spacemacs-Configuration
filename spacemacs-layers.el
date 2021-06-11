@@ -12,8 +12,11 @@
                                        (auto-completion
                                         :variables
                                         auto-completion-enable-snippets-in-popup nil
-                                        auto-completion-enable-help-tooltip t
+                                        auto-completion-enable-help-tooltip nil
                                         auto-completion-return-key-behavior nil
+                                        auto-completion-complete-with-key-sequence-delay 0.1
+                                        auto-completion-minimum-prefix-length 2
+                                        auto-completion-idle-delay 0.5
                                         auto-completion-tab-key-behavior 'complete
                                         auto-completion-enable-sort-by-usage t)
                                        syntax-checking
@@ -27,15 +30,19 @@
                                        (python
                                         :variables
                                         python-pipenv-activate t
+                                        ;; flycheck-checker 'python-pylint
+                                        ;; flycheck-pylintrc ".pylintrc"
+                                        ;; flycheck-checker-error-threshold 500
                                         python-backend 'lsp
                                         python-lsp-server 'pyls
                                         python-formatter 'black
                                         python-format-on-save t
                                         python-sort-imports-on-save t
                                         python-fill-column 99
-                                        ;; python-poetry-activate t
                                         )
-                                       lsp
+                                       (lsp
+                                        :variables
+                                        lsp-modeline-diagnostics-scope :file)
                                        emacs-lisp
                                        rust
                                        html    ;; web-mode
@@ -44,7 +51,7 @@
                                        ansible
                                        ;;      ----- text processing -----
                                        latex
-                                       markdown
+                                       ;;markdown
                                        dnick-org
                                        yaml
                                        csv
@@ -62,13 +69,13 @@
                                       yasnippet-snippets
                                       vimish-fold
                                       evil-vimish-fold
+                                      doom-themes
                                       solarized-theme
                                       xresources-theme
-                                      molokai-theme
                                       )
 
    dotspacemacs-frozen-packages '()
 
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(lsp-python-ms)
    )
   )

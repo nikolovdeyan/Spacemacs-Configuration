@@ -1,0 +1,28 @@
+# -*- mode: snippet -*-
+# key: meetingminutes
+# name: Meeting Minutes Document
+# group: document_templates
+# --
+
+* Meeting Information
+Date/Time
+Location
+Purpose of meeting
+
+* Attendees
++ $2 (note taker)
++ $3
+
+* Agenda
+ # Prepare the agenda in advance. The agenda can be sent along with the meeting invite
+
+* Discussion
+ # Follow the agenda points as an outline with an item for each agenda item
+ # Possible items here are decisions, next steps, 
+
+* Action Items
+
+| Item | Owner | Due date |
+|      |       |          |
+
+* Other Notes

@@ -3,6 +3,9 @@
   ;;
   ;;  key bindings
   ;;
+  ;;  rebind default quit binding to only kill the frame (otherwise kills the emacsserver)
+  (evil-leader/set-key "q q" 'spacemacs/frame-killer)
+
   ;;  'o' is the leader key reserved for user-defined keys
   (spacemacs/set-leader-keys "oi" 'helm-semantic-or-imenu)
   (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
